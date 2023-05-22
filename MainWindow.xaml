@@ -6,7 +6,21 @@
         xmlns:local="clr-namespace:_7thMeet"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="#FFF1722A">
+        <Button x:Name="BtnOpen" Content="開啟檔案" HorizontalAlignment="Center" Height="30" Margin="23,22,681.6,368" VerticalAlignment="Center" Width="89" FontSize="14"/>
+        <Button x:Name="BtnSave" Content="儲存檔案" HorizontalAlignment="Center" Height="30" Margin="117,22,588.6,368" VerticalAlignment="Center" Width="88" FontSize="14"/>
+        <Button x:Name="BtnBold" Content="B" HorizontalAlignment="Center" Height="30" Margin="458,22,305.6,368" VerticalAlignment="Center" Width="30" FontWeight="Bold" FontSize="14" FontFamily="Modern No. 20"/>
+        <ComboBox x:Name="CmbFontFamily" HorizontalAlignment="Center" Height="30" Margin="210,22,422.6,368" VerticalAlignment="Center" Width="161"/>
+        <ComboBox x:Name="CmbFontSize" HorizontalAlignment="Center" Height="30" Margin="376,22,342.6,368" VerticalAlignment="Center" Width="75"/>
+        <Button x:Name="BtnItalic" Content="I" HorizontalAlignment="Center" Height="30" Margin="493,22,270.6,368" VerticalAlignment="Center" Width="30" FontFamily="Modern No. 20" FontStyle="Italic"/>
+        <Button x:Name="BtnUnderline" Content="U" HorizontalAlignment="Center" Height="30" Margin="528,22,234.6,368" VerticalAlignment="Center" Width="31" FontFamily="Modern No. 20" FontSize="14"/>
+        <RichTextBox x:Name="RtbText" HorizontalAlignment="Center" Height="344" Margin="23,57,21.6,19" VerticalAlignment="Center" Width="749">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
     </Grid>
 </Window>
