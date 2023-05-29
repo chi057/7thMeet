@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_7thMeet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="WPF Word" Height="450" Width="800">
     <Grid Background="#FFF1722A">
-        <Button x:Name="BtnOpen" Content="開啟檔案" HorizontalAlignment="Center" Height="30" Margin="23,22,681.6,368" VerticalAlignment="Center" Width="89" FontSize="14"/>
-        <Button x:Name="BtnSave" Content="儲存檔案" HorizontalAlignment="Center" Height="30" Margin="117,22,588.6,368" VerticalAlignment="Center" Width="88" FontSize="14"/>
+        <Button x:Name="BtnOpen" Content="開啟檔案" HorizontalAlignment="Center" Height="30" Margin="23,22,681.6,368" VerticalAlignment="Center" Width="89" FontSize="14" Click="BtnOpen_Click"/>
+        <Button x:Name="BtnSave" Content="儲存檔案" HorizontalAlignment="Center" Height="30" Margin="117,22,588.6,368" VerticalAlignment="Center" Width="88" FontSize="14" Click="BtnSave_Click"/>
         <Button x:Name="BtnBold" Content="B" HorizontalAlignment="Center" Height="30" Margin="458,22,305.6,368" VerticalAlignment="Center" Width="30" FontWeight="Bold" FontSize="14" FontFamily="Modern No. 20"/>
         <ComboBox x:Name="CmbFontFamily" HorizontalAlignment="Center" Height="30" Margin="210,22,422.6,368" VerticalAlignment="Center" Width="161"/>
         <ComboBox x:Name="CmbFontSize" HorizontalAlignment="Center" Height="30" Margin="376,22,342.6,368" VerticalAlignment="Center" Width="75"/>

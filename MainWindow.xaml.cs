@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,11 +24,33 @@ namespace _7thMeet
         public MainWindow()
         {
             InitializeComponent();
+            RtbText.Document.Blocks.Clear();
+            CmbFontFamily.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
+            CmbFontSize.ItemsSource = new List<double>() { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 };
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnOpen_Click(object sender, RoutedEventArgs e)
         {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.Filter = "RTF文件 (*.rtf)|*.rtf|All files (*.*)|*.*";
+            if (dlg.ShowDialog() == true)
+            {
+                FileStream fileStream = new FileStream(dlg.FileName, FileMode.Open);
+                TextRange range = new TextRange(RtbText.Document.ContentStart, RtbText.Document.ContentEnd);
+                range.Load(fileStream, DataFormats.Rtf);
+            }
+        }
 
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            dlg.Filter = "RTF文件 (*.rtf)|*.rtf|All files (*.*)|*.*";
+            if (dlg.ShowDialog() == true)
+            {
+                FileStream fileStream = new FileStream(dlg.FileName, FileMode.Create);
+                TextRange range = new TextRange(RtbText.Document.ContentStart, RtbText.Document.ContentEnd);
+                range.Save(fileStream, DataFormats.Rtf);
+            }
         }
     }
-}
+ }
