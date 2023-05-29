@@ -52,5 +52,17 @@ namespace _7thMeet
                 range.Save(fileStream, DataFormats.Rtf);
             }
         }
+
+        private void CmbFontFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (CmbFontFamily.SelectedItem != null)
+                RtbText.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, CmbFontFamily.SelectedItem);
+        }
+
+        private void CmbFontSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (CmbFontSize.SelectedItem != null)
+                RtbText.Selection.ApplyPropertyValue(Inline.FontSizeProperty, CmbFontSize.SelectedItem);
+        }
     }
  }
