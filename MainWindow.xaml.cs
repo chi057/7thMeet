@@ -94,5 +94,32 @@ namespace _7thMeet
             else
                 RtbText.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, TextDecorations.Underline);
         }
+
+        SolidColorBrush DefaultColor = new SolidColorBrush(Color.FromArgb(100, 221, 221, 221));
+        private void RtbText_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            object temp = RtbText.Selection.GetPropertyValue(Inline.FontWeightProperty);
+            if ((temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold)))
+                BtnBold.Background = Brushes.Gray;
+            else
+                BtnBold.Background = DefaultColor;
+
+            temp = RtbText.Selection.GetPropertyValue(Inline.FontStyleProperty);
+            if ((temp != DependencyProperty.UnsetValue) && (temp.Equals(FontStyles.Italic)))
+                BtnItalic.Background = Brushes.Gray;
+            else
+                BtnItalic.Background = DefaultColor;
+
+            temp = RtbText.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
+            if ((temp != DependencyProperty.UnsetValue) && (temp.Equals(TextDecorations.Underline)))
+                BtnUnderline.Background = Brushes.Gray;
+            else
+                BtnUnderline.Background = DefaultColor;
+
+            temp = RtbText.Selection.GetPropertyValue(Inline.FontFamilyProperty);
+            CmbFontFamily.SelectedItem = temp;
+            temp = RtbText.Selection.GetPropertyValue(Inline.FontSizeProperty);
+            CmbFontSize.SelectedItem = temp;
+        }
     }
 }
