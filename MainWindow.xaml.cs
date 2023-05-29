@@ -64,5 +64,35 @@ namespace _7thMeet
             if (CmbFontSize.SelectedItem != null)
                 RtbText.Selection.ApplyPropertyValue(Inline.FontSizeProperty, CmbFontSize.SelectedItem);
         }
+
+        private void BtnBold_Click(object sender, RoutedEventArgs e)
+        {
+            object temp = RtbText.Selection.GetPropertyValue(Inline.FontWeightProperty);
+
+            if ((temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold)))
+                RtbText.Selection.ApplyPropertyValue(FontWeightProperty, FontWeights.Normal);
+            else
+                RtbText.Selection.ApplyPropertyValue(FontWeightProperty, FontWeights.Bold);
+        }
+
+        private void BtnItalic_Click(object sender, RoutedEventArgs e)
+        {
+            object temp = RtbText.Selection.GetPropertyValue(Inline.FontStyleProperty);
+
+            if ((temp != DependencyProperty.UnsetValue) && (temp.Equals(FontStyles.Italic)))
+                RtbText.Selection.ApplyPropertyValue(FontStyleProperty, FontStyles.Normal);
+            else
+                RtbText.Selection.ApplyPropertyValue(FontStyleProperty, FontStyles.Italic);
+        }
+
+        private void BtnUnderline_Click(object sender, RoutedEventArgs e)
+        {
+            object temp = RtbText.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
+
+            if ((temp != DependencyProperty.UnsetValue) && (temp.Equals(TextDecorations.Underline)))
+                RtbText.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, null);
+            else
+                RtbText.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, TextDecorations.Underline);
+        }
     }
- }
+}
