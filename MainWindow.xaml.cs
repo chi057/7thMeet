@@ -121,5 +121,10 @@ namespace _7thMeet
             temp = RtbText.Selection.GetPropertyValue(Inline.FontSizeProperty);
             CmbFontSize.SelectedItem = temp;
         }
+
+        private void RtbText_LostFocus(object sender, RoutedEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }
